@@ -1,12 +1,10 @@
 import '../Game.css'
 
-const GameCircle = ({id,children}) => {
-    const onClick = (id)=>{
-        alert('clicked' + id) 
-    }
+const GameCircle = ({id,children,className,onCircledClicked}) => {
+   
    
   return (
-    <div  onClick={()=>onClick(id)}  className={`gameCircle ${id %2 ===0 ?"odd" : "even"}`} >
+    <div  onClick={()=>onCircledClicked(id)}  className={`gameCircle ${className} player_0`} >
     {children}
     </div>
   )
